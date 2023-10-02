@@ -1,5 +1,6 @@
 package Pieces;
 
+import Board.Board;
 import Enums.Colors;
 
 public class Piece {
@@ -10,11 +11,14 @@ public class Piece {
     private final Colors color;
     private boolean isDead;
 
-    public Piece( int row,int col, Colors color) {
+    private Board board;
+
+    public Piece( int row,int col, Colors color,Board board) {
         this.column = col;
         this.row = row;
         this.color = color;
         this.uniChar = setUniChar();
+        this.board = board;
     }
 
 

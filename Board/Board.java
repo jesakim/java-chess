@@ -32,34 +32,34 @@ public class Board {
 
         // Initialize pawns for both players
         for (int i = 0; i < 8; i++) {
-            board[1][i] = new Pawn(1,i, Colors.b); // White pawns
-            board[6][i] = new Pawn(6,i, Colors.w);; // Black pawns
+            board[1][i] = new Pawn(1,i, Colors.b,this); // White pawns
+            board[6][i] = new Pawn(6,i, Colors.w,this);; // Black pawns
         }
 
         // Initialize other pieces for white
-        board[0][0] = new Rook(0, 0, Colors.b);
-        board[0][1] = new Knight(0,1,Colors.b);
-        board[0][2] = new Bishop(0,2,Colors.b);
-        board[0][3] = new Queen(0,3,Colors.b);
-        board[0][4] = new King(0,4,Colors.b);
-        board[0][5] = new Bishop(0,5,Colors.b);
-        board[0][6] = new Knight(0,6,Colors.b);
-        board[0][7] = new Rook(0, 7, Colors.b);
+        board[0][0] = new Rook(0, 0, Colors.b,this);
+        board[0][1] = new Knight(0,1,Colors.b,this);
+        board[0][2] = new Bishop(0,2,Colors.b,this);
+        board[0][3] = new Queen(0,3,Colors.b,this);
+        board[0][4] = new King(0,4,Colors.b,this);
+        board[0][5] = new Bishop(0,5,Colors.b,this);
+        board[0][6] = new Knight(0,6,Colors.b,this);
+        board[0][7] = new Rook(0, 7, Colors.b,this);
 
         // Initialize other pieces for black
-        board[7][0] = new Rook(7, 0, Colors.w);
-        board[7][1] = new Knight(7, 1, Colors.w);
-        board[7][2] = new Bishop(7, 2, Colors.w);
-        board[7][3] = new Queen(7, 3, Colors.w);
-        board[7][4] = new King(7, 4, Colors.w);
-        board[7][5] = new Bishop(7, 5, Colors.w);
-        board[7][6] = new Knight(7, 6, Colors.w);
-        board[7][7] = new Rook(7, 7, Colors.w);
+        board[7][0] = new Rook(7, 0, Colors.w,this);
+        board[7][1] = new Knight(7, 1, Colors.w,this);
+        board[7][2] = new Bishop(7, 2, Colors.w,this);
+        board[7][3] = new Queen(7, 3, Colors.w,this);
+        board[7][4] = new King(7, 4, Colors.w,this);
+        board[7][5] = new Bishop(7, 5, Colors.w,this);
+        board[7][6] = new Knight(7, 6, Colors.w,this);
+        board[7][7] = new Rook(7, 7, Colors.w,this);
 
         // Initialize empty squares
         for (int i = 2; i < 6; i++) {
             for (int j = 0; j < 8; j++) {
-                board[i][j] = new Piece(i,j,null);
+                board[i][j] = new Piece(i,j,null,this);
             }
         }
 
@@ -82,7 +82,7 @@ public class Board {
                 killedWhitePieaces.add(destination.getUniChar());
             }
             destination = null;
-            board[pieceRow][pieceColumn] = new Piece(pieceRow,pieceColumn,null);
+            board[pieceRow][pieceColumn] = new Piece(pieceRow,pieceColumn,null,null);
         }else{
             board[pieceRow][pieceColumn] = destination;
         }
