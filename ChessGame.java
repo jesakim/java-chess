@@ -64,12 +64,14 @@ public class ChessGame {
                                 char destCharacter = inputDestination.charAt(0);
                                 char destNumber = inputDestination.charAt(1);
 
+
                                 int destRow = PlayerInput.returnRow(destNumber);
                                 int destCol = PlayerInput.returnCol(destCharacter);
 
+
                                 Piece distination = board.getPiece(destRow,destCol);
 
-                                if ( (isWhiteTurn && distination.getColor() != Colors.w) || (!isWhiteTurn && distination.getColor() != Colors.b )){
+                                if ( piece.isValidMove(destCol,destRow)){
                                     board.movePiece(piece,distination);
                                     moveSuccessful = true;
                                     isWhiteTurn = !isWhiteTurn;

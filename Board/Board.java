@@ -82,7 +82,7 @@ public class Board {
                 killedWhitePieaces.add(destination.getUniChar());
             }
             destination = null;
-            board[pieceRow][pieceColumn] = new Piece(pieceRow,pieceColumn,null,null);
+            board[pieceRow][pieceColumn] = new Piece(pieceRow,pieceColumn,null,this);
         }else{
             board[pieceRow][pieceColumn] = destination;
         }

@@ -11,6 +11,7 @@ public class Piece {
     private final Colors color;
     private boolean isDead;
 
+
     private Board board;
 
     public Piece( int row,int col, Colors color,Board board) {
@@ -64,10 +65,19 @@ public class Piece {
         return name;
     }
 
+    public Board getBoard() {
+        return board;
+    }
+
+
     public void move(int desCol, int desRow) {
         setColumn(desCol);
         setRow(desRow);
     }
+
+    public boolean isValidMove(int destinationCol, int destinationRow){
+        return false;
+    };
 
 
     public String toString() {
