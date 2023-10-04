@@ -14,4 +14,16 @@ public class King extends Piece {
     public char setUniChar() {
         return 'K';
     }
+
+    @Override
+    public boolean isValidMove(int destinationCol, int destinationRow) {
+        int currentCol = this.getColumn();
+        int currentRow = this.getRow();
+
+        // Check if the destination is a valid move (one square in any direction)
+        int colDiff = Math.abs(destinationCol - currentCol);
+        int rowDiff = Math.abs(destinationRow - currentRow);
+
+        return (colDiff <= 1 && rowDiff <= 1 && getBoard().getPiece(destinationRow,destinationCol).getColor() != getColor());
+    }
 }
