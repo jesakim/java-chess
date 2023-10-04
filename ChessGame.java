@@ -3,14 +3,12 @@ import Board.BoardView;
 import Enums.Colors;
 import Pieces.Piece;
 import Utils.ConsoleColors;
-
 import java.util.Scanner;
 
 public class ChessGame {
 
     public static void clearConsole() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        System.out.print("CLS");
     }
 
     public static void main(String[] args) {
@@ -69,9 +67,8 @@ public class ChessGame {
                                 int destCol = PlayerInput.returnCol(destCharacter);
 
 
-                                Piece distination = board.getPiece(destRow,destCol);
-
                                 if ( piece.isValidMove(destCol,destRow)){
+                                    Piece distination = board.getPiece(destRow,destCol);
                                     board.movePiece(piece,distination);
                                     moveSuccessful = true;
                                     isWhiteTurn = !isWhiteTurn;

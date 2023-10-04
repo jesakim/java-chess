@@ -12,6 +12,7 @@ public class BoardView {
         this.board = board;
     }
     public void displayBoard() {
+        System.out.println();
         System.out.println("   a  b  c  d  e  f  g  h");
 
         for (int i = 0; i < 8; i++) {
